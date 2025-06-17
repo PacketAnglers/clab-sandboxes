@@ -1,0 +1,234 @@
+---
+# ------------------------------------------------------------
+# Arista EVPN Deployment Guide Topology
+# ------------------------------------------------------------
+
+name: arista-evpn-dg
+
+prefix: ""
+
+mgmt:
+  network: mgmt
+  ipv4-subnet: 172.100.100.0/24
+
+topology:
+
+  defaults:
+    env:
+      INTFTYPE: et
+
+  kinds:
+    ceos:
+      image: ceos:latest
+      memory: 4g
+    linux:
+      image: mitchv85/devhost
+
+  nodes:
+
+#########################
+# DC "A" SPINE          #
+#########################
+
+    A-SPINE1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.101
+      startup-config: configs/A-SPINE1.cfg
+      ports:
+        - '22001:22'
+        - '8001:80'
+        - '44301:443'
+
+#########################
+# DC "A" LEAF           #
+#########################
+
+    A-LEAF1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.102
+      startup-config: configs/A-LEAF1.cfg
+      ports:
+        - '22002:22'
+        - '8002:80'
+        - '44302:443'
+
+    A-LEAF2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.103
+      startup-config: configs/A-LEAF2.cfg
+      ports:
+        - '22003:22'
+        - '8003:80'
+        - '44303:443'
+
+    A-LEAF3:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.104
+      startup-config: configs/A-LEAF3.cfg
+      ports:
+        - '22004:22'
+        - '8004:80'
+        - '44304:443'
+
+#########################
+# DC "A" HostC6          #
+#########################
+
+    HostA1:
+      kind: linux
+      image: mitchv85/devhost
+      mgmt-ipv4: 172.100.100.201
+      ports:
+        - '22201:22'
+      exec:
+        - bash /usr/local/bin/hostnetconfig.sh -i4 10.10.10.101/24 -i6 2001:db8:10:10::101/64 -g 10.10.10.1
+
+    HostA2:
+      kind: linux
+      image: mitchv85/devhost
+      mgmt-ipv4: 172.100.100.202
+      ports:
+        - '22202:22'
+      exec:
+        - bash /usr/local/bin/hostnetconfig.sh -i4 10.20.20.101/24 -i6 2001:db8:20:20::101/64 -g 10.20.20.1
+
+    HostA3:
+      kind: linux
+      image: mitchv85/devhost
+      mgmt-ipv4: 172.100.100.203
+      ports:
+        - '22203:22'
+      exec:
+        - bash /usr/local/bin/hostnetconfig.sh -i4 10.30.30.101/24 -i6 2001:db8:30:30::101/64 -g 10.30.30.1
+
+#########################
+# DC "B" SPINE          #
+#########################
+
+    B-SPINE1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.105
+      startup-config: configs/B-SPINE1.cfg
+      ports:
+        - '22005:22'
+        - '8005:80'
+        - '44305:443'
+
+#########################
+# DC "B" LEAF           #
+#########################
+
+    B-LEAF1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.106
+      startup-config: configs/B-LEAF1.cfg
+      ports:
+        - '22006:22'
+        - '8006:80'
+        - '44306:443'
+
+    B-LEAF2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.107
+      startup-config: configs/B-LEAF2.cfg
+      ports:
+        - '22007:22'
+        - '8007:80'
+        - '44307:443'
+
+    B-LEAF3:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.108
+      startup-config: configs/B-LEAF3.cfg
+      ports:
+        - '22008:22'
+        - '8008:80'
+        - '44308:443'
+
+#########################
+# DC "B" HostC6          #
+#########################
+
+    HostB1:
+      kind: linux
+      image: mitchv85/devhost
+      mgmt-ipv4: 172.100.100.204
+      ports:
+        - '22204:22'
+      exec:
+        - bash /usr/local/bin/hostnetconfig.sh -b -i4 10.10.10.102/24 -i6 2001:db8:10:10::101/64 -g 10.10.10.1
+
+    HostB2:
+      kind: linux
+      image: mitchv85/devhost
+      mgmt-ipv4: 172.100.100.205
+      ports:
+        - '22205:22'
+      exec:
+        - bash /usr/local/bin/hostnetconfig.sh -b -i4 10.20.20.102/24 -i6 2001:db8:20:20::101/64 -g 10.20.20.1
+
+    HostB3:
+      kind: linux
+      image: mitchv85/devhost
+      mgmt-ipv4: 172.100.100.206
+      ports:
+        - '22206:22'
+      exec:
+        - bash /usr/local/bin/hostnetconfig.sh -i4 10.30.30.102/24 -i6 2001:db8:30:30::101/64 -g 10.30.30.1
+
+###############################################################
+###############################################################
+#                     IP TRANSPORT                            #
+###############################################################
+
+    BB1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.150
+      startup-config: configs/BB1.cfg
+      ports:
+        - '22050:22'
+        - '8050:80'
+        - '44350:443'
+
+  links:
+######################
+# A-SPINE1 to LEAF   #
+######################
+    - endpoints: ["A-SPINE1:et1", "A-LEAF1:et1"]
+    - endpoints: ["A-SPINE1:et2", "A-LEAF2:et1"]
+    - endpoints: ["A-SPINE1:et3", "A-LEAF3:et1"]
+########################
+# A-LEAF2 to A-LEAF3   #
+########################
+    - endpoints: ["A-LEAF2:et5", "A-LEAF3:et5"]
+    - endpoints: ["A-LEAF2:et6", "A-LEAF3:et6"]
+########################
+# DC "A" Hosts         #
+########################
+    - endpoints: ["HostA1:eth1", "A-LEAF1:et7"]
+    - endpoints: ["HostA2:eth1", "A-LEAF2:et7"]
+    - endpoints: ["HostA3:eth1", "A-LEAF3:et7"]
+######################
+# B-SPINE1 to LEAF   #
+######################
+    - endpoints: ["B-SPINE1:et1", "B-LEAF1:et1"]
+    - endpoints: ["B-SPINE1:et2", "B-LEAF2:et1"]
+    - endpoints: ["B-SPINE1:et3", "B-LEAF3:et1"]
+########################
+# B-LEAF2 to B-LEAF3   #
+########################
+    - endpoints: ["B-LEAF2:et5", "B-LEAF3:et5"]
+    - endpoints: ["B-LEAF2:et6", "B-LEAF3:et6"]
+########################
+# DC "B" Hosts         #
+########################
+    - endpoints: ["HostB1:eth1", "B-LEAF1:et7"]
+    - endpoints: ["HostB2:eth1", "B-LEAF2:et7"]
+    - endpoints: ["HostB3:eth1", "B-LEAF3:et7"]
+#################################
+# IP Transport Connectivity     #
+#################################
+    - endpoints: ["BB1:et1", "A-LEAF2:et2"]
+    - endpoints: ["BB1:et2", "A-LEAF3:et2"]
+    - endpoints: ["BB1:et3", "B-LEAF2:et2"]
+    - endpoints: ["BB1:et4", "B-LEAF3:et2"]
