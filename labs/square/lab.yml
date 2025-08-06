@@ -1,6 +1,6 @@
 ---
 # --------------------------------------------------------------
-# Arista EVPN Deployment Guide Topology
+# Square Topology
 # --------------------------------------------------------------
 
 name: square
@@ -32,6 +32,7 @@ topology:
       mgmt-ipv4: 172.100.100.101
       binds:
         - sn/eos1.txt:/mnt/flash/ceos-config:ro
+        - toggles/toggle_override:/mnt/flash/toggle_override
       startup-config: init-configs/EOS1.cfg
       ports:
         - '22001:22'
@@ -43,6 +44,7 @@ topology:
       mgmt-ipv4: 172.100.100.102
       binds:
         - sn/eos2.txt:/mnt/flash/ceos-config:ro
+        - toggles/toggle_override:/mnt/flash/toggle_override
       startup-config: init-configs/EOS2.cfg
       ports:
         - '22002:22'
@@ -54,6 +56,7 @@ topology:
       mgmt-ipv4: 172.100.100.103
       binds:
         - sn/eos3.txt:/mnt/flash/ceos-config:ro
+        - toggles/toggle_override:/mnt/flash/toggle_override
       startup-config: init-configs/EOS3.cfg
       ports:
         - '22003:22'
@@ -65,6 +68,7 @@ topology:
       mgmt-ipv4: 172.100.100.104
       binds:
         - sn/eos4.txt:/mnt/flash/ceos-config:ro
+        - toggles/toggle_override:/mnt/flash/toggle_override
       startup-config: init-configs/EOS4.cfg
       ports:
         - '22004:22'
