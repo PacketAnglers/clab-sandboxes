@@ -32,7 +32,7 @@ topology:
       mgmt-ipv4: 172.100.100.101
       binds:
         - sn/eos1.txt:/mnt/flash/ceos-config:ro
-      # startup-config: init-configs/EOS1.cfg
+      startup-config: init-configs/EOS1.cfg
       ports:
         - '22001:22'
         - '8001:80'
@@ -43,7 +43,7 @@ topology:
       mgmt-ipv4: 172.100.100.102
       binds:
         - sn/eos2.txt:/mnt/flash/ceos-config:ro
-      # startup-config: init-configs/EOS2.cfg
+      startup-config: init-configs/EOS2.cfg
       ports:
         - '22002:22'
         - '8002:80'
@@ -54,7 +54,7 @@ topology:
       mgmt-ipv4: 172.100.100.103
       binds:
         - sn/eos3.txt:/mnt/flash/ceos-config:ro
-      # startup-config: init-configs/EOS3.cfg
+      startup-config: init-configs/EOS3.cfg
       ports:
         - '22003:22'
         - '8003:80'
@@ -65,7 +65,7 @@ topology:
       mgmt-ipv4: 172.100.100.104
       binds:
         - sn/eos4.txt:/mnt/flash/ceos-config:ro
-      # startup-config: init-configs/EOS4.cfg
+      startup-config: init-configs/EOS4.cfg
       ports:
         - '22004:22'
         - '8004:80'
