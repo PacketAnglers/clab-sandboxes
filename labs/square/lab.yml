@@ -38,6 +38,10 @@ topology:
         - '22001:22'
         - '8001:80'
         - '44301:443'
+      labels:
+        graph-posX: "925"
+        graph-posY: "255"
+        graph-groupLabelPos: bottom-center
 
     EOS2:
       kind: ceos
@@ -50,6 +54,10 @@ topology:
         - '22002:22'
         - '8002:80'
         - '44302:443'
+      labels:
+        graph-posX: "1055"
+        graph-posY: "255"
+        graph-groupLabelPos: bottom-center
 
     EOS3:
       kind: ceos
@@ -62,6 +70,10 @@ topology:
         - '22003:22'
         - '8003:80'
         - '44303:443'
+      labels:
+        graph-posX: "925"
+        graph-posY: "325"
+        graph-groupLabelPos: bottom-center
 
     EOS4:
       kind: ceos
@@ -74,6 +86,10 @@ topology:
         - '22004:22'
         - '8004:80'
         - '44304:443'
+      labels:
+        graph-posX: "1055"
+        graph-posY: "325"
+        graph-groupLabelPos: bottom-center
 
     Host1:
       kind: linux
@@ -85,6 +101,10 @@ topology:
         IPV6: 2001:db8:10:10::101/64
       ports:
         - '22201:22'
+      labels:
+        graph-posX: "975"
+        graph-posY: "355"
+        graph-groupLabelPos: bottom-center
 
     Host2:
       kind: linux
@@ -96,9 +116,13 @@ topology:
         IPV6: 2001:db8:20:20::101/64
       ports:
         - '22202:22'
+      labels:
+        graph-posX: "1015"
+        graph-posY: "355"
+        graph-groupLabelPos: bottom-center
 
   links:
-    - endpoints: ["EOS1:et1", "EOS2:et1"]
-    - endpoints: ["EOS1:et2", "EOS3:et2"]
-    - endpoints: ["EOS2:et2", "EOS4:et2"]
-    - endpoints: ["EOS3:et1", "EOS4:et1"]
+    - endpoints: [ "EOS1:et1", "EOS2:et1" ]
+    - endpoints: [ "EOS1:et2", "EOS3:et2" ]
+    - endpoints: [ "EOS2:et2", "EOS4:et2" ]
+    - endpoints: [ "EOS3:et1", "EOS4:et1" ]
