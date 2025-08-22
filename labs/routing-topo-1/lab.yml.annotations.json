@@ -102,10 +102,10 @@
     {
       "id": "Host1",
       "position": {
-        "x": 805,
+        "x": 777,
         "y": 343
       },
-      "icon": "router",
+      "icon": "client",
       "geoCoordinates": {
         "lat": 48.770104184094734,
         "lng": 9.082118841001575
@@ -114,10 +114,10 @@
     {
       "id": "Host2",
       "position": {
-        "x": 1281,
+        "x": 1309,
         "y": 343
       },
-      "icon": "router",
+      "icon": "client",
       "geoCoordinates": {
         "lat": 48.97316954730428,
         "lng": 9.726814261322648

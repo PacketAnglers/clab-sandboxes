@@ -41,13 +41,6 @@ topology:
         - '22001:22'
         - '8001:80'
         - '44301:443'
-      labels:
-        graph-posX: "945"
-        graph-posY: "301"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "49.435123078826123"
-        graph-geoCoordinateLng: "9.570052336837501"
-        graph-icon: router
       image: ceos:latest
 
     EOS2:
@@ -60,13 +53,6 @@ topology:
         - '22002:22'
         - '8002:80'
         - '44302:443'
-      labels:
-        graph-posX: "945"
-        graph-posY: "385"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "48.780061543173851"
-        graph-geoCoordinateLng: "9.608447050949309"
-        graph-icon: router
       image: ceos:latest
 
     EOS3:
@@ -79,13 +65,6 @@ topology:
         - '22003:22'
         - '8003:80'
         - '44303:443'
-      labels:
-        graph-posX: "1043"
-        graph-posY: "385"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "49.412002129723028"
-        graph-geoCoordinateLng: "9.372201496318851"
-        graph-icon: router
       image: ceos:latest
 
     EOS4:
@@ -98,13 +77,6 @@ topology:
         - '22004:22'
         - '8004:80'
         - '44304:443'
-      labels:
-        graph-posX: "1043"
-        graph-posY: "301"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "48.985606801907551"
-        graph-geoCoordinateLng: "9.277944753479103"
-        graph-icon: router
       image: ceos:latest
 
     EOS5:
@@ -117,13 +89,6 @@ topology:
         - '22005:22'
         - '8005:80'
         - '44305:443'
-      labels:
-        graph-posX: "1141"
-        graph-posY: "385"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "49.006289666573146"
-        graph-geoCoordinateLng: "9.868387834594119"
-        graph-icon: router
       image: ceos:latest
 
     EOS6:
@@ -136,13 +101,6 @@ topology:
         - '22006:22'
         - '8006:80'
         - '44306:443'
-      labels:
-        graph-posX: "1141"
-        graph-posY: "301"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "49.371217846430113"
-        graph-geoCoordinateLng: "9.202090542273265"
-        graph-icon: router
       image: ceos:latest
 
     EOS7:
@@ -155,13 +113,6 @@ topology:
         - '22007:22'
         - '8007:80'
         - '44307:443'
-      labels:
-        graph-posX: "861"
-        graph-posY: "343"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "49.353957495211816"
-        graph-geoCoordinateLng: "9.656044782394945"
-        graph-icon: router
       image: ceos:latest
 
     EOS8:
@@ -174,13 +125,6 @@ topology:
         - '22008:22'
         - '8008:80'
         - '44308:443'
-      labels:
-        graph-posX: "1225"
-        graph-posY: "343"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "49.273371312856980"
-        graph-geoCoordinateLng: "9.676907158461770"
-        graph-icon: router
       image: ceos:latest
 
     Host1:
@@ -193,13 +137,6 @@ topology:
         IPV6: 2001:db8:10:10::101/64
       ports:
         - '22201:22'
-      labels:
-        graph-posX: "805"
-        graph-posY: "343"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "48.770104184094734"
-        graph-geoCoordinateLng: "9.082118841001575"
-        graph-icon: client
       image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
 
     Host2:
@@ -212,13 +149,6 @@ topology:
         IPV6: 2001:db8:20:20::101/64
       ports:
         - '22202:22'
-      labels:
-        graph-posX: "1281"
-        graph-posY: "343"
-        graph-groupLabelPos: bottom-center
-        graph-geoCoordinateLat: "48.973169547304281"
-        graph-geoCoordinateLng: "9.726814261322648"
-        graph-icon: client
       image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
     # Host Template
     # HostB4:
