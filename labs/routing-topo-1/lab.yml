@@ -199,7 +199,7 @@ topology:
         graph-groupLabelPos: bottom-center
         graph-geoCoordinateLat: "48.770104184094734"
         graph-geoCoordinateLng: "9.082118841001575"
-        graph-icon: router
+        graph-icon: client
       image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
 
     Host2:
@@ -218,7 +218,7 @@ topology:
         graph-groupLabelPos: bottom-center
         graph-geoCoordinateLat: "48.973169547304281"
         graph-geoCoordinateLng: "9.726814261322648"
-        graph-icon: router
+        graph-icon: client
       image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
     # Host Template
     # HostB4:
@@ -248,3 +248,5 @@ topology:
     - endpoints: [ EOS5:et2, EOS6:et2 ]
     - endpoints: [ EOS5:et4, EOS8:et1 ]
     - endpoints: [ EOS6:et4, EOS8:et2 ]
+    - endpoints: [ Host1:eth1, EOS7:et3 ]
+    - endpoints: [ Host2:eth1, EOS8:et3 ]
