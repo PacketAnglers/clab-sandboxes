@@ -41,7 +41,6 @@ topology:
         - '22001:22'
         - '8001:80'
         - '44301:443'
-      image: ceos:latest
 
     EOS2:
       kind: ceos
@@ -53,7 +52,6 @@ topology:
         - '22002:22'
         - '8002:80'
         - '44302:443'
-      image: ceos:latest
 
     EOS3:
       kind: ceos
@@ -65,7 +63,6 @@ topology:
         - '22003:22'
         - '8003:80'
         - '44303:443'
-      image: ceos:latest
 
     EOS4:
       kind: ceos
@@ -77,7 +74,6 @@ topology:
         - '22004:22'
         - '8004:80'
         - '44304:443'
-      image: ceos:latest
 
     EOS5:
       kind: ceos
@@ -89,7 +85,6 @@ topology:
         - '22005:22'
         - '8005:80'
         - '44305:443'
-      image: ceos:latest
 
     EOS6:
       kind: ceos
@@ -101,7 +96,6 @@ topology:
         - '22006:22'
         - '8006:80'
         - '44306:443'
-      image: ceos:latest
 
     EOS7:
       kind: ceos
@@ -113,7 +107,6 @@ topology:
         - '22007:22'
         - '8007:80'
         - '44307:443'
-      image: ceos:latest
 
     EOS8:
       kind: ceos
@@ -125,7 +118,6 @@ topology:
         - '22008:22'
         - '8008:80'
         - '44308:443'
-      image: ceos:latest
 
     Host1:
       kind: linux
