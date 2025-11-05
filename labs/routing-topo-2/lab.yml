@@ -141,6 +141,17 @@ topology:
         - '8003:80'
         - '44303:443'
 
+    CORE-4:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.104
+      binds:
+        - sn/core-4.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CORE-4.cfg
+      ports:
+        - '22004:22'
+        - '8004:80'
+        - '44304:443'
+
     PE-2-1:
       kind: ceos
       mgmt-ipv4: 172.100.100.121
@@ -290,6 +301,8 @@ topology:
     - endpoints: [ CORE-2:et2, CORE-3:et3 ]
     - endpoints: [ CORE-3:et1, PE-2-5:et1 ]
     - endpoints: [ CORE-3:et2, PE-2-6:et1 ]
+    - endpoints: [ CORE-1:et4, CORE-4:et1 ]
+    - endpoints: [ CORE-3:et4, CORE-4:et2 ]
     - endpoints: [ PE-2-5:et3, PE-2-6:et3 ]
     - endpoints: [ PE-2-5:et2, PE-2-3:et2 ]
     - endpoints: [ PE-2-6:et2, PE-2-4:et2 ]

@@ -141,7 +141,7 @@
       "icon": "router",
       "position": {
         "x": 483,
-        "y": 287
+        "y": 245
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
@@ -160,6 +160,20 @@
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
+      },
+      "group": "Core - 49.0000 (Level 2) - ASN 65000",
+      "level": "1"
+    },
+    {
+      "id": "CORE-4",
+      "icon": "router",
+      "position": {
+        "x": 483,
+        "y": 329
+      },
+      "geoCoordinates": {
+        "lat": 48.68482688840228,
+        "lng": 9.107895390625673
       },
       "group": "Core - 49.0000 (Level 2) - ASN 65000",
       "level": "1"
