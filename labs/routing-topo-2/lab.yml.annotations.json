@@ -1,5 +1,111 @@
 {
-  "freeTextAnnotations": [],
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1762312362409_1",
+      "text": "Loopback0: 101.0.0.[Device ID]",
+      "position": {
+        "x": 175,
+        "y": 161
+      },
+      "fontSize": 8,
+      "fontColor": "#ffffff",
+      "backgroundColor": "#16325b",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "fontFamily": "monospace"
+    },
+    {
+      "id": "freeText_1762312488119_2",
+      "text": "Loopback0: 102.0.0.[Device ID]",
+      "position": {
+        "x": 791,
+        "y": 161
+      },
+      "fontSize": 8,
+      "fontColor": "#ffffff",
+      "backgroundColor": "#16325b",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "fontFamily": "monospace"
+    },
+    {
+      "id": "freeText_1762312514483_5",
+      "text": "Loopback0: 100.0.0.[Device ID]",
+      "position": {
+        "x": 483,
+        "y": 217
+      },
+      "fontSize": 8,
+      "fontColor": "#ffffff",
+      "backgroundColor": "#16325b",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "fontFamily": "monospace"
+    },
+    {
+      "id": "freeText_1762312543894_6",
+      "text": "ASBR",
+      "position": {
+        "x": 357,
+        "y": 231
+      },
+      "fontSize": 5,
+      "fontColor": "#ffffff",
+      "backgroundColor": "#16325b",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "fontFamily": "monospace"
+    },
+    {
+      "id": "freeText_1762312573526_7",
+      "text": "ASBR",
+      "position": {
+        "x": 357,
+        "y": 315
+      },
+      "fontSize": 5,
+      "fontColor": "#ffffff",
+      "backgroundColor": "#16325b",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "fontFamily": "monospace"
+    },
+    {
+      "id": "freeText_1762312588547_8",
+      "text": "ASBR",
+      "position": {
+        "x": 609,
+        "y": 231
+      },
+      "fontSize": 5,
+      "fontColor": "#ffffff",
+      "backgroundColor": "#16325b",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "fontFamily": "monospace"
+    },
+    {
+      "id": "freeText_1762312594704_9",
+      "text": "ASBR",
+      "position": {
+        "x": 609,
+        "y": 315
+      },
+      "fontSize": 5,
+      "fontColor": "#ffffff",
+      "backgroundColor": "#16325b",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "fontFamily": "monospace"
+    }
+  ],
   "groupStyleAnnotations": [
     {
       "id": "Region 1 - 49.0001 (Level 2) - ASN 65001:1",
