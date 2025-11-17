@@ -32,7 +32,7 @@ topology:
       mgmt-ipv4: 172.100.100.100
       startup-config: init-configs/SPINE.cfg
       ports:
-        - '22000:22'
+        - '22010:22'
         - '8000:80'
         - '44300:443'
 
