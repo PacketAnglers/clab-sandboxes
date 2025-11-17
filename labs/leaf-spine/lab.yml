@@ -1,0 +1,125 @@
+---
+# --------------------------------------------------------------
+# Square Topology
+# --------------------------------------------------------------
+
+name: square
+
+prefix: ""
+
+mgmt:
+  network: mgmt
+  ipv4-subnet: 172.100.100.0/24
+
+topology:
+
+  defaults:
+    env:
+      INTFTYPE: et
+
+  kinds:
+    ceos:
+      image: ceos:latest
+      env:
+        CLAB_MGMT_VRF: MGMT
+    linux:
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
+
+  nodes:
+
+    SPINE:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.100
+      startup-config: init-configs/SPINE.cfg
+      ports:
+        - '22000:22'
+        - '8000:80'
+        - '44300:443'
+
+    LEAF-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.101
+      startup-config: init-configs/LEAF-1.cfg
+      ports:
+        - '22001:22'
+        - '8001:80'
+        - '44301:443'
+
+    LEAF-2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.102
+      startup-config: init-configs/LEAF-2.cfg
+      ports:
+        - '22002:22'
+        - '8002:80'
+        - '44302:443'
+
+    LEAF-3:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.103
+      startup-config: init-configs/LEAF-3.cfg
+      ports:
+        - '22003:22'
+        - '8003:80'
+        - '44303:443'
+
+    LEAF-4:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.104
+      startup-config: init-configs/LEAF-4.cfg
+      ports:
+        - '22004:22'
+        - '8004:80'
+        - '44304:443'
+
+    FW:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.105
+      startup-config: init-configs/FW.cfg
+      ports:
+        - '22005:22'
+        - '8005:80'
+        - '44305:443'
+
+    Host1:
+      kind: linux
+      mgmt-ipv4: 172.100.100.201
+      env:
+        IPV4: 10.10.10.101/24
+        STATIC_ROUTE: 10.0.0.0/8
+        GW: 10.10.10.1
+        IPV6: 2001:db8:10:10::101/64
+      ports:
+        - '22201:22'
+
+    Host2:
+      kind: linux
+      mgmt-ipv4: 172.100.100.202
+      env:
+        IPV4: 10.20.20.101/24
+        STATIC_ROUTE: 10.0.0.0/8
+        GW: 10.20.20.1
+        IPV6: 2001:db8:20:20::101/64
+      ports:
+        - '22202:22'
+
+    Host3:
+      kind: linux
+      mgmt-ipv4: 172.100.100.203
+      env:
+        IPV4: 10.30.30.101/24
+        STATIC_ROUTE: 10.0.0.0/8
+        GW: 10.30.30.1
+        IPV6: 2001:db8:30:30::101/64
+      ports:
+        - '22203:22'
+
+  links:
+    - endpoints: [ "SPINE:et1", "LEAF-1:et1" ]
+    - endpoints: [ "SPINE:et2", "LEAF-2:et1" ]
+    - endpoints: [ "SPINE:et3", "LEAF-3:et1" ]
+    - endpoints: [ "SPINE:et4", "LEAF-4:et1" ]
+    - endpoints: [ "LEAF-1:et5", "Host1:eth1" ]
+    - endpoints: [ "LEAF-2:et5", "Host2:eth1" ]
+    - endpoints: [ "LEAF-3:et5", "Host3:eth1" ]
+    - endpoints: [ "LEAF-4:et5", "FW:et1" ]
