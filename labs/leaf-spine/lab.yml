@@ -33,8 +33,8 @@ topology:
       startup-config: init-configs/SPINE.cfg
       ports:
         - '22010:22'
-        - '8000:80'
-        - '44300:443'
+        - '8010:80'
+        - '44310:443'
 
     LEAF-1:
       kind: ceos
