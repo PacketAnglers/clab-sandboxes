@@ -19,11 +19,11 @@ topology:
 
   kinds:
     ceos:
-      image: ceos:latest
+      image: arista/ceos:latest
       env:
         CLAB_MGMT_VRF: MGMT
     linux:
-      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.1
 
   nodes:
 
@@ -37,21 +37,12 @@ topology:
       binds:
         - sn/eos1.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS1.cfg
-      ports:
-        - '22001:22'
-        - '8001:80'
-        - '44301:443'
-
     EOS2:
       kind: ceos
       mgmt-ipv4: 172.100.100.102
       binds:
         - sn/eos2.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS2.cfg
-      ports:
-        - '22002:22'
-        - '8002:80'
-        - '44302:443'
 
     EOS3:
       kind: ceos
@@ -59,10 +50,6 @@ topology:
       binds:
         - sn/eos3.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS3.cfg
-      ports:
-        - '22003:22'
-        - '8003:80'
-        - '44303:443'
 
     EOS4:
       kind: ceos
@@ -70,10 +57,6 @@ topology:
       binds:
         - sn/eos4.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS4.cfg
-      ports:
-        - '22004:22'
-        - '8004:80'
-        - '44304:443'
 
     EOS5:
       kind: ceos
@@ -81,10 +64,6 @@ topology:
       binds:
         - sn/eos5.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS5.cfg
-      ports:
-        - '22005:22'
-        - '8005:80'
-        - '44305:443'
 
     EOS6:
       kind: ceos
@@ -92,10 +71,6 @@ topology:
       binds:
         - sn/eos6.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS6.cfg
-      ports:
-        - '22006:22'
-        - '8006:80'
-        - '44306:443'
 
     EOS7:
       kind: ceos
@@ -103,10 +78,6 @@ topology:
       binds:
         - sn/eos7.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS7.cfg
-      ports:
-        - '22007:22'
-        - '8007:80'
-        - '44307:443'
 
     EOS8:
       kind: ceos
@@ -114,10 +85,6 @@ topology:
       binds:
         - sn/eos8.txt:/mnt/flash/ceos-config:ro
       startup-config: init-configs/EOS8.cfg
-      ports:
-        - '22008:22'
-        - '8008:80'
-        - '44308:443'
 
     Host1:
       kind: linux
@@ -127,9 +94,7 @@ topology:
         STATIC_ROUTE: 10.0.0.0/8
         GW: 10.10.10.1
         IPV6: 2001:db8:10:10::101/64
-      ports:
-        - '22201:22'
-      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.1
 
     Host2:
       kind: linux
@@ -139,21 +104,7 @@ topology:
         STATIC_ROUTE: 10.0.0.0/8
         GW: 10.20.20.1
         IPV6: 2001:db8:20:20::101/64
-      ports:
-        - '22202:22'
-      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
-    # Host Template
-    # HostB4:
-    #   kind: linux
-    #   mgmt-ipv4: 172.100.100.204
-    #   env:
-    #     TMODE: lacp
-    #     IPV4: 10.10.10.103/24
-    #     STATIC_ROUTE: 10.0.0.0/8
-    #     GW: 10.10.10.1
-    #     IPV6: 2001:db8:10:10::103/64
-    #   ports:
-    #     - '22204:22'
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.1
 
   links:
     - endpoints: [ EOS1:et2, EOS2:et2 ]
