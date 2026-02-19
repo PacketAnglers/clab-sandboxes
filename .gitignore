@@ -286,5 +286,5 @@ avd_inventory/config_backup/
 
 # ContainerLab
 
-clab-*/
+labs/*/clab-*/
 *.bak
