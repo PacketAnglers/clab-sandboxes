@@ -3,7 +3,7 @@
 # Routing Topo 1
 # --------------------------------------------------------------
 
-name: arista-evpn-dg
+name: routing-topo-1
 
 prefix: ""
 
@@ -36,55 +36,55 @@ topology:
       mgmt-ipv4: 172.100.100.101
       binds:
         - sn/eos1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS1.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS1/startup-config
     EOS2:
       kind: ceos
       mgmt-ipv4: 172.100.100.102
       binds:
         - sn/eos2.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS2.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS2/startup-config
 
     EOS3:
       kind: ceos
       mgmt-ipv4: 172.100.100.103
       binds:
         - sn/eos3.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS3.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS3/startup-config
 
     EOS4:
       kind: ceos
       mgmt-ipv4: 172.100.100.104
       binds:
         - sn/eos4.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS4.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS4/startup-config
 
     EOS5:
       kind: ceos
       mgmt-ipv4: 172.100.100.105
       binds:
         - sn/eos5.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS5.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS5/startup-config
 
     EOS6:
       kind: ceos
       mgmt-ipv4: 172.100.100.106
       binds:
         - sn/eos6.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS6.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS6/startup-config
 
     EOS7:
       kind: ceos
       mgmt-ipv4: 172.100.100.107
       binds:
         - sn/eos7.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS7.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS7/startup-config
 
     EOS8:
       kind: ceos
       mgmt-ipv4: 172.100.100.108
       binds:
         - sn/eos8.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/EOS8.cfg
+      startup-config: startup-configs/clab-routing-topo-1/EOS8/startup-config
 
     Host1:
       kind: linux
