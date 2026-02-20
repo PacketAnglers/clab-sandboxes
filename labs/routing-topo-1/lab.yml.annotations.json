@@ -7,8 +7,8 @@
       "id": "EOS1",
       "icon": "router",
       "position": {
-        "x": 945,
-        "y": 301
+        "x": 920,
+        "y": 240
       },
       "geoCoordinates": {
         "lat": 49.43512307882612,
@@ -19,8 +19,8 @@
       "id": "EOS2",
       "icon": "router",
       "position": {
-        "x": 945,
-        "y": 385
+        "x": 920,
+        "y": 400
       },
       "geoCoordinates": {
         "lat": 48.78006154317385,
@@ -31,8 +31,8 @@
       "id": "EOS3",
       "icon": "router",
       "position": {
-        "x": 1043,
-        "y": 385
+        "x": 1040,
+        "y": 400
       },
       "geoCoordinates": {
         "lat": 49.41200212972303,
@@ -43,8 +43,8 @@
       "id": "EOS4",
       "icon": "router",
       "position": {
-        "x": 1043,
-        "y": 301
+        "x": 1040,
+        "y": 240
       },
       "geoCoordinates": {
         "lat": 48.98560680190755,
@@ -55,8 +55,8 @@
       "id": "EOS5",
       "icon": "router",
       "position": {
-        "x": 1141,
-        "y": 385
+        "x": 1160,
+        "y": 400
       },
       "geoCoordinates": {
         "lat": 49.006289666573146,
@@ -67,8 +67,8 @@
       "id": "EOS6",
       "icon": "router",
       "position": {
-        "x": 1141,
-        "y": 301
+        "x": 1160,
+        "y": 240
       },
       "geoCoordinates": {
         "lat": 49.37121784643011,
@@ -79,8 +79,8 @@
       "id": "EOS7",
       "icon": "router",
       "position": {
-        "x": 861,
-        "y": 343
+        "x": 840,
+        "y": 320
       },
       "geoCoordinates": {
         "lat": 49.353957495211816,
@@ -91,8 +91,8 @@
       "id": "EOS8",
       "icon": "router",
       "position": {
-        "x": 1225,
-        "y": 343
+        "x": 1240,
+        "y": 320
       },
       "geoCoordinates": {
         "lat": 49.27337131285698,
@@ -103,8 +103,8 @@
       "id": "Host1",
       "icon": "client",
       "position": {
-        "x": 777,
-        "y": 343
+        "x": 720,
+        "y": 320
       },
       "geoCoordinates": {
         "lat": 48.770104184094734,
@@ -115,13 +115,15 @@
       "id": "Host2",
       "icon": "client",
       "position": {
-        "x": 1309,
-        "y": 343
+        "x": 1360,
+        "y": 320
       },
       "geoCoordinates": {
         "lat": 48.97316954730428,
         "lng": 9.726814261322648
       }
     }
-  ]
+  ],
+  "networkNodeAnnotations": [],
+  "freeShapeAnnotations": []
 }
